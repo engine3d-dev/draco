@@ -1,1 +1,3 @@
 docs/_site
+build/
+CMakeUserPresets.json
