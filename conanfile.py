@@ -10,7 +10,7 @@ required_conan_version = ">=1.53.0"
 
 class DracoConan(ConanFile):
     name = "draco"
-    version = "1.0"
+    version = "1.5.6"
     description = "Draco is a library for compressing and decompressing 3D " \
                   "geometric meshes and point clouds. It is intended to " \
                   "improve the storage and transmission of 3D graphics."
@@ -71,7 +71,7 @@ class DracoConan(ConanFile):
     #     get(self, **self.conan_data["source"][self.version], strip_root=True)
 
     def generate(self):
-        tc = CMakeToolchain(self, generator="MinGW Makefiles")
+        tc = CMakeToolchain(self)
 
         # use different cmake definitions based on package version
         if Version(self.version) < "1.4.0":

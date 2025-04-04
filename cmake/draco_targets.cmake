@@ -174,8 +174,8 @@ macro(draco_add_executable)
       # directly (ab)using compiler/linker specific flags once CMake v3.24 is in
       # wider use. See:
       # https://cmake.org/cmake/help/latest/manual/cmake-generator-expressions.7.html#genex:LINK_GROUP
-      list(INSERT exe_LIB_DEPS 0 -Wl,--start-group)
-      list(APPEND exe_LIB_DEPS -Wl,--end-group)
+      # list(INSERT exe_LIB_DEPS 0 -Wl,--start-group)
+      # list(APPEND exe_LIB_DEPS -Wl,--end-group)
     endif()
     target_link_libraries(${exe_NAME} PRIVATE ${exe_LIB_DEPS})
   endif()
